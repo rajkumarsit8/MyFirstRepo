@@ -10,3 +10,4 @@ val data = spark.read.textFile("src/main/resources/data.txt").rdd
 val word = data.flatMap(line => line.split(" ")).map(line=>(line,1)).reduceByKey(_+_)
 word.collect().foreach(println)
 }
+}
